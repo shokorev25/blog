@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->text('content');
-            $table->boolean('is_approved')->default(false); // для модерации
+            $table->boolean('is_approved')->default(false); 
             $table->timestamps();
         });
     }

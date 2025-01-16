@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 
-// Показать форму для создания поста
+
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::resource('posts', PostController::class);
 
-// Или если хотите использовать конкретные маршруты:
+
 Route::get('posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('posts/{post}', [PostController::class, 'update'])->name('posts.update');
 
@@ -24,5 +24,5 @@ Route::post('posts/{post}/toggle-publish', [PostController::class, 'togglePublis
 Route::get('/', function () {
     return view('welcome');
 });
-// routes/web.php
+
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->boolean('is_published')->default(false); // для публикации
+            $table->boolean('is_published')->default(false); 
             $table->timestamps();
         });
     }
